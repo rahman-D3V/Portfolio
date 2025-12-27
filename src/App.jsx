@@ -96,12 +96,11 @@ export default function Portfolio() {
               >
                 About
               </a>
-              <a
-                href="#contact"
-                onClick={() => setMenuOpen(false)}
-                className="px-4 py-3 bg-red-500 text-black text-center rounded-lg hover:bg-red-600 transition-colors font-medium focus:outline-none focus:ring-2 focus:ring-red-500"
-              >
-                Contact
+              <a className="group inline-flex items-center gap-2 px-6 sm:px-6 py-3 sm:py-3 bg-red-500 text-black font-semibold rounded-lg hover:bg-red-600 transition-all duration-300 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 focus:ring-offset-black w-full sm:w-auto justify-center">
+                Resume
+                <span className="group-hover:translate-x-1 transition-transform duration-300">
+                  →
+                </span>
               </a>
             </div>
           </div>
@@ -575,7 +574,7 @@ export default function Portfolio() {
           </div>
         </section>
 
-        <div className=" flex items-center justify-center mb-14 -mt-5 gap-6 sm:gap-8">
+        <div className=" flex items-center justify-center mb-14 sm:-mt-5 gap-6 sm:gap-8">
           <a
             href="https://github.com/rahman-D3V"
             className="text-gray-400 hover:text-white hover:scale-110 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-white focus:rounded"
