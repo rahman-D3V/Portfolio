@@ -56,7 +56,12 @@ export default function Portfolio() {
               Blog
             </a>
 
-            <a className="group inline-flex items-center gap-2 px-6 sm:px-6 py-3 sm:py-3 bg-red-500 text-black font-semibold rounded-lg hover:bg-red-600 transition-all duration-300 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 focus:ring-offset-black w-full sm:w-auto justify-center">
+            <a
+              href="/rahman_frontend_resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group inline-flex items-center gap-2 px-6 sm:px-6 py-3 sm:py-3 bg-red-500 text-black font-semibold rounded-lg hover:bg-red-600 transition-all duration-300 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 focus:ring-offset-black w-full sm:w-auto justify-center"
+            >
               Resume
               <span className="group-hover:translate-x-1 transition-transform duration-300">
                 →
@@ -96,7 +101,12 @@ export default function Portfolio() {
               >
                 About
               </a>
-              <a className="group inline-flex items-center gap-2 px-6 sm:px-6 py-3 sm:py-3 bg-red-500 text-black font-semibold rounded-lg hover:bg-red-600 transition-all duration-300 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 focus:ring-offset-black w-full sm:w-auto justify-center">
+              <a
+                href="/rahman_frontend_resume.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group inline-flex items-center gap-2 px-6 sm:px-6 py-3 sm:py-3 bg-red-500 text-black font-semibold rounded-lg hover:bg-red-600 transition-all duration-300 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 focus:ring-offset-black w-full sm:w-auto justify-center"
+              >
                 Resume
                 <span className="group-hover:translate-x-1 transition-transform duration-300">
                   →
