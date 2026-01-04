@@ -133,7 +133,7 @@ export default function Portfolio() {
               <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
             </span>
             <span className="text-xs sm:text-sm text-gray-300">
-              Available for opportunities
+              OPEN TO WORK
             </span>
           </div>
 
