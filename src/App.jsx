@@ -1,4 +1,8 @@
 import React, { useState } from "react";
+import { EncryptedText } from "./components/ui/encrypted-text";
+import { CardSpotlight } from "./components/ui/card-spotlight";
+import { Meteors } from "./components/ui/meteors";
+import { PointerHighlight } from "./components/ui/pointer-highlight";
 
 // Yasir — Ultra-minimal portfolio with enhanced UX and accessibility
 
@@ -142,7 +146,12 @@ export default function Portfolio() {
             Building digital
             <br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 via-red-600 to-red-500 bg-[length:200%_auto] animate-gradient">
-              experiences
+              <EncryptedText
+                text="experiences"
+                encryptedClassName="text-neutral-500"
+                // revealedClassName="dark:text-red text-red"
+                revealDelayMs={75}
+              />
             </span>
           </h1>
 
@@ -218,21 +227,21 @@ export default function Portfolio() {
 
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {/* Project 01 */}
-            <article className="group relative bg-gradient-to-br from-gray-900/60 to-gray-900/20 border border-gray-800 rounded-2xl p-6 hover:border-red-500/60 hover:shadow-lg hover:shadow-red-500/10 transition-all duration-300">
+            <CardSpotlight className="group overflow-hidden relative bg-gradient-to-br from-gray-900/60 to-gray-900/20 border border-gray-800 rounded-2xl p-6 hover:border-red-500/60 hover:shadow-lg hover:shadow-red-500/10 transition-all duration-300">
               <span className="absolute top-4 right-4 text-xs text-gray-600 font-mono">
                 01
               </span>
 
-              <h3 className="text-xl font-semibold text-white mb-3 group-hover:text-red-500 transition-colors">
+              <h3 className="text-xl font-semibold text-white mb-3 group-hover:text-red-500 transition-colors relative z-20">
                 Buyonic
               </h3>
 
-              <p className="text-sm text-gray-400 mb-5 leading-relaxed">
+              <p className="text-sm text-gray-400 group-hover:text-neutral-200 mb-5 leading-relaxed relative z-20">
                 Modern e-commerce platform focused on smooth cart flow,
                 filtering, and a clean checkout experience.
               </p>
 
-              <div className="flex flex-wrap gap-2 mb-5">
+              <div className="flex flex-wrap gap-2 mb-5 ">
                 <span className="text-xs px-2.5 py-1 rounded-full border border-gray-700  bg-black/50 text-gray-400; group-hover:border-gray-500">
                   React
                 </span>
@@ -247,7 +256,7 @@ export default function Portfolio() {
                 </span>
               </div>
 
-              <div className="flex items-center gap-4 text-sm">
+              <div className="flex items-center gap-4 text-sm relative z-20">
                 <a
                   href="https://buyonic.netlify.app/"
                   className="text-red-500 font-medium hover:underline focus:outline-none"
@@ -263,19 +272,19 @@ export default function Portfolio() {
                   GitHub
                 </a>
               </div>
-            </article>
+            </CardSpotlight>
 
             {/* Project 02 */}
-            <article className="group relative bg-gradient-to-br from-gray-900/60 to-gray-900/20 border border-gray-800 rounded-2xl p-6 hover:border-red-500/60 hover:shadow-lg hover:shadow-red-500/10 transition-all duration-300">
+            <CardSpotlight className="group relative bg-gradient-to-br from-gray-900/60 to-gray-900/20 border border-gray-800 rounded-2xl p-6 hover:border-red-500/60 hover:shadow-lg hover:shadow-red-500/10 transition-all duration-300 overflow-hidden">
               <span className="absolute top-4 right-4 text-xs text-gray-600 font-mono">
                 02
               </span>
 
-              <h3 className="text-xl font-semibold text-white mb-3 group-hover:text-red-500 transition-colors">
+              <h3 className="text-xl font-semibold text-white mb-3 group-hover:text-red-500 transition-colors relative z-20">
                 RoleFit
               </h3>
 
-              <p className="text-sm text-gray-400 mb-5 leading-relaxed">
+              <p className="text-sm text-gray-400 mb-5 leading-relaxed relative z-20 group-hover:text-neutral-200">
                 AI-powered job description analyzer that evaluates candidate fit
                 using Gemini-based semantic matching.
               </p>
@@ -295,7 +304,7 @@ export default function Portfolio() {
                 </span>
               </div>
 
-              <div className="flex items-center gap-4 text-sm">
+              <div className="flex items-center gap-4 text-sm relative z-20">
                 <a
                   href="https://role-fit.vercel.app/"
                   className="text-red-500 font-medium hover:underline focus:outline-none"
@@ -311,19 +320,19 @@ export default function Portfolio() {
                   GitHub
                 </a>
               </div>
-            </article>
+            </CardSpotlight>
 
             {/* Project 03 */}
-            <article className="group relative bg-gradient-to-br from-gray-900/60 to-gray-900/20 border border-gray-800 rounded-2xl p-6 hover:border-red-500/60 hover:shadow-lg hover:shadow-red-500/10 transition-all duration-300">
+            <CardSpotlight className="group relative bg-gradient-to-br from-gray-900/60 to-gray-900/20 border border-gray-800 rounded-2xl p-6 hover:border-red-500/60 hover:shadow-lg hover:shadow-red-500/10 transition-all duration-300 overflow-hidden">
               <span className="absolute top-4 right-4 text-xs text-gray-600 font-mono">
                 03
               </span>
 
-              <h3 className="text-xl font-semibold text-white mb-3 group-hover:text-red-500 transition-colors">
+              <h3 className="text-xl font-semibold text-white mb-3 group-hover:text-red-500 transition-colors relative z-20">
                 Planiro
               </h3>
 
-              <p className="text-sm text-gray-400 mb-5 leading-relaxed">
+              <p className="text-sm text-gray-400 mb-5 leading-relaxed relative z-20 group-hover:text-neutral-200">
                 Lightweight task manager designed for quick capture and minimal
                 daily workflows, with clarity.
               </p>
@@ -337,7 +346,7 @@ export default function Portfolio() {
                 </span>
               </div>
 
-              <div className="flex items-center gap-4 text-sm">
+              <div className="flex items-center gap-4 text-sm relative z-20">
                 <a
                   href="https://planiro.netlify.app/"
                   className="text-red-500 font-medium hover:underline focus:outline-none"
@@ -353,17 +362,20 @@ export default function Portfolio() {
                   GitHub
                 </a>
               </div>
-            </article>
+            </CardSpotlight>
           </div>
         </section>
 
         {/* Skills */}
+
         <section
           id="skills"
           className="py-16 sm:py-20 border-t border-gray-900"
         >
           <h2 className="text-3xl sm:text-4xl font-bold mb-10 sm:mb-12">
-            Tech Stack
+            <PointerHighlight>
+              <span className="p-3">Tech Stack</span>
+            </PointerHighlight>
           </h2>
 
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3 sm:gap-4">
@@ -559,6 +571,7 @@ export default function Portfolio() {
                     <span className="text-white ml-2">developer;</span>
                   </CodeLine>
                 </div>
+                <Meteors number={20} />
               </div>
 
               {/* Status Bar */}
