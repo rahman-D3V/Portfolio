@@ -3,6 +3,8 @@ import { EncryptedText } from "./components/ui/encrypted-text";
 import { CardSpotlight } from "./components/ui/card-spotlight";
 import { Meteors } from "./components/ui/meteors";
 import { PointerHighlight } from "./components/ui/pointer-highlight";
+import { AnimatedShinyButton } from "./components/eldoraui/animated-shiny-button";
+import { AnimatedBadge } from "./components/eldoraui/animated-badge";
 
 // Yasir — Ultra-minimal portfolio with enhanced UX and accessibility
 
@@ -60,17 +62,18 @@ export default function Portfolio() {
               Blog
             </a>
 
-            <a
+            <AnimatedShinyButton
+              url={"/rahman_frontend_resume.pdf"}
               href="/rahman_frontend_resume.pdf"
               target="_blank"
               rel="noopener noreferrer"
-              className="group inline-flex items-center gap-2 px-6 sm:px-6 py-3 sm:py-3 bg-red-500 text-black font-semibold rounded-lg hover:bg-red-600 transition-all duration-300 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 focus:ring-offset-black w-full sm:w-auto justify-center"
+              className="ac"
             >
               Resume
-              <span className="group-hover:translate-x-1 transition-transform duration-300">
+              {/* <span className="group-hover:translate-x-1 transition-transform duration-300">
                 →
-              </span>
-            </a>
+              </span> */}
+            </AnimatedShinyButton>
           </nav>
 
           <button
@@ -131,14 +134,11 @@ export default function Portfolio() {
 
         <div className="relative max-w-5xl mx-auto text-center">
           {/* Status badge */}
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-gray-800 bg-gray-900/50 backdrop-blur mb-8 animate-fade-in">
-            <span className="relative flex h-2 w-2">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
-            </span>
-            <span className="text-xs sm:text-sm text-gray-300">
-              OPEN TO WORK
-            </span>
+          <div className="inline-flex items-center gap-2 px-4 py-2 mb-8">
+            <AnimatedBadge
+            text="OPEN TO WORK"
+            color="#22d3ee"
+          ></AnimatedBadge>
           </div>
 
           {/* Main headline - oversized, bold */}
