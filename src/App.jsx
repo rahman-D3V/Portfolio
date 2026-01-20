@@ -5,6 +5,13 @@ import { Meteors } from "./components/ui/meteors";
 import { PointerHighlight } from "./components/ui/pointer-highlight";
 import { AnimatedShinyButton } from "./components/eldoraui/animated-shiny-button";
 import { AnimatedBadge } from "./components/eldoraui/animated-badge";
+import { Button } from "./components/ui/button";
+import { GravityStarsBackground } from "./components/animate-ui/components/backgrounds/gravity-stars";
+import { CursorProvider } from "./components/animate-ui/components/animate/cursor";
+import {
+  Cursor,
+  CursorFollow,
+} from "./components/animate-ui/components/animate/cursor";
 
 // Yasir — Ultra-minimal portfolio with enhanced UX and accessibility
 
@@ -20,6 +27,7 @@ export default function Portfolio() {
       }}
       className="min-h-screen bg-black text-white antialiased"
     >
+      <GravityStarsBackground className="bg-transparent absolute z-20" />
       {/* Skip to main content for accessibility */}
       <a
         href="#main-content"
@@ -135,10 +143,7 @@ export default function Portfolio() {
         <div className="relative max-w-5xl mx-auto text-center">
           {/* Status badge */}
           <div className="inline-flex items-center gap-2 px-4 py-2 mb-8">
-            <AnimatedBadge
-            text="OPEN TO WORK"
-            color="#22d3ee"
-          ></AnimatedBadge>
+            <AnimatedBadge text="OPEN TO WORK" color="#22d3ee"></AnimatedBadge>
           </div>
 
           {/* Main headline - oversized, bold */}
@@ -161,10 +166,10 @@ export default function Portfolio() {
           </p>
 
           {/* CTAs */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 px-4">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 px-4 ">
             <a
               href="#work"
-              className="group inline-flex items-center gap-2 px-6 sm:px-8 py-3 sm:py-3.5 bg-red-500 text-black font-semibold rounded-lg hover:bg-red-600 transition-all duration-300 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 focus:ring-offset-black w-full sm:w-auto justify-center"
+              className="group z-30 inline-flex items-center gap-2 px-6 sm:px-8 py-3 sm:py-3.5 bg-red-500 text-black font-semibold rounded-lg hover:bg-red-600 transition-all duration-300 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 focus:ring-offset-black w-full sm:w-auto justify-center"
             >
               View my work
               <span className="group-hover:translate-x-1 transition-transform duration-300">
@@ -173,7 +178,7 @@ export default function Portfolio() {
             </a>
             <a
               href="#about"
-              className="inline-flex items-center gap-2 px-6 sm:px-8 py-3 sm:py-3.5 border border-gray-700 text-white font-semibold rounded-lg hover:bg-gray-900 hover:border-gray-600 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-black w-full sm:w-auto justify-center"
+              className="inline-flex z-30 items-center gap-2 px-6 sm:px-8 py-3 sm:py-3.5 border border-gray-700 text-white font-semibold rounded-lg hover:bg-gray-900 hover:border-gray-600 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-black w-full sm:w-auto justify-center"
             >
               More about me
             </a>
@@ -183,7 +188,7 @@ export default function Portfolio() {
           <div className="mt-12 sm:mt-10 flex flex-wrap items-center justify-center gap-4 sm:gap-6 text-xs sm:text-sm text-gray-500 px-4">
             <a
               href="https://github.com/rahman-D3V"
-              className="hover:text-red-500 transition-colors duration-300 focus:text-red-500 focus:outline-none"
+              className="hover:text-red-500 z-30 transition-colors duration-300 focus:text-red-500 focus:outline-none"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -192,7 +197,7 @@ export default function Portfolio() {
             <span className="hidden sm:inline">•</span>
             <a
               href="https://www.linkedin.com/in/rahmanhr/"
-              className="hover:text-red-500 transition-colors duration-300 focus:text-red-500 focus:outline-none"
+              className="hover:text-red-500 z-30 transition-colors duration-300 focus:text-red-500 focus:outline-none"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -202,7 +207,7 @@ export default function Portfolio() {
             <a
               href="https://hashnode.com/@hr-rahman"
               target="_blank"
-              className="hover:text-red-500 transition-colors duration-300 focus:text-red-500 focus:outline-none"
+              className="hover:text-red-500 z-30 transition-colors duration-300 focus:text-red-500 focus:outline-none"
             >
               Blog
             </a>
@@ -396,194 +401,221 @@ export default function Portfolio() {
           id="about"
           className="py-5 sm:py-20 border-t border-gray-900 scroll-mt-20"
         >
+          {/* <CursorProvider global={false}>
+        {true && <Cursor />}
+        {true && (
+          <CursorFollow
+            side={'bottom'}
+            sideOffset={15}
+            align={'end'}
+            alignOffset={5}
+          >
+            Designer
+          </CursorFollow>
+        )} */}
+
           <div className="max-w-4xl mx-auto">
             <h2 className="text-3xl sm:text-4xl font-bold mb-8">About</h2>
 
             {/* Code Editor Style Container */}
             <div className="relative bg-[#1e1e1e] rounded-xl overflow-hidden border border-gray-800 shadow-2xl">
               {/* Editor Header */}
-              <div className="flex items-center justify-between px-3 sm:px-4 py-2.5 sm:py-3 bg-[#323233] border-b border-gray-700">
-                <div className="flex items-center gap-1.5 sm:gap-2">
-                  <div className="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-[#ff5f56]"></div>
-                  <div className="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-[#ffbd2e]"></div>
-                  <div className="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-[#27c93f]"></div>
+              <CursorProvider>
+                <Cursor />
+                <CursorFollow>rahman</CursorFollow>
+                <div className="flex items-center justify-between px-3 sm:px-4 py-2.5 sm:py-3 bg-[#323233] border-b border-gray-700">
+                  <div className="flex items-center gap-1.5 sm:gap-2">
+                    <div className="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-[#ff5f56]"></div>
+                    <div className="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-[#ffbd2e]"></div>
+                    <div className="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-[#27c93f]"></div>
+                  </div>
+                  <div className="text-xs text-gray-400 font-mono">
+                    rahman.js
+                  </div>
+                  <div className="text-xs text-gray-500 hidden sm:block">
+                    JavaScript
+                  </div>
                 </div>
-                <div className="text-xs text-gray-400 font-mono">rahman.js</div>
-                <div className="text-xs text-gray-500 hidden sm:block">
-                  JavaScript
+
+                {/* Code Content - Improved for mobile */}
+                <div className="p-3 sm:p-6 font-mono text-xs sm:text-sm leading-relaxed overflow-x-auto">
+                  <div className="space-y-0.5 sm:space-y-1 min-w-max">
+                    <CodeLine num={1}>
+                      <span className="text-purple-400">const</span>
+                      <span className="text-white ml-2">developer</span>
+                      <span className="text-white ml-2">=</span>
+                      <span className="text-white ml-2">{"{"}</span>
+                    </CodeLine>
+
+                    <CodeLine num={2}>
+                      <span className="text-blue-400 ml-2 sm:ml-4">name:</span>
+                      <span className="text-orange-300 ml-2">
+                        "Habibur Rahman"
+                      </span>
+                      <span className="text-white">,</span>
+                    </CodeLine>
+
+                    <CodeLine num={3}>
+                      <span className="text-blue-400 ml-2 sm:ml-4">role:</span>
+                      <span className="text-orange-300 ml-2">
+                        "Frontend Developer"
+                      </span>
+                      <span className="text-white">,</span>
+                    </CodeLine>
+                    <CodeLine num={4}>
+                      <span className="text-blue-400 ml-2 sm:ml-4">email:</span>
+                      <span className="text-orange-300 ml-2">
+                        "rahman.d3v@gmail.com"
+                      </span>
+                      <span className="text-white">,</span>
+                    </CodeLine>
+
+                    <CodeLine num={5}>
+                      <span className="text-blue-400 ml-2 sm:ml-4">
+                        education:
+                      </span>
+                      <span className="text-white ml-2">{"{"}</span>
+                    </CodeLine>
+
+                    <CodeLine num={6}>
+                      <span className="text-blue-400 ml-4 sm:ml-8">
+                        degree:
+                      </span>
+                      <span className="text-orange-300 ml-2">
+                        "Bachelor of Computer Applications(BCA)"
+                      </span>
+                      <span className="text-white">,</span>
+                    </CodeLine>
+
+                    <CodeLine num={7}>
+                      <span className="text-blue-400 ml-4 sm:ml-8">
+                        university:
+                      </span>
+                      <span className="text-orange-300 ml-2">
+                        "Lovely Professional University"
+                      </span>
+                      <span className="text-white">,</span>
+                    </CodeLine>
+
+                    <CodeLine num={8}>
+                      <span className="text-blue-400 ml-4 sm:ml-8">cgpa:</span>
+                      <span className="text-green-400 ml-2">9.0</span>
+                      <span className="text-white">,</span>
+                    </CodeLine>
+
+                    <CodeLine num={9}>
+                      <span className="text-blue-400 ml-4 sm:ml-8">
+                        status:
+                      </span>
+                      <span className="text-orange-300 ml-2">"Final Year"</span>
+                    </CodeLine>
+
+                    <CodeLine num={10}>
+                      <span className="text-white ml-2 sm:ml-4">{"}"}</span>
+                      <span className="text-white">,</span>
+                    </CodeLine>
+
+                    {/* ===== SKILLS (UPDATED) ===== */}
+
+                    <CodeLine num={11}>
+                      <span className="text-blue-400 ml-2 sm:ml-4">
+                        skills:
+                      </span>
+                      <span className="text-white ml-2">{"{"}</span>
+                    </CodeLine>
+
+                    <CodeLine num={12}>
+                      <span className="text-blue-400 ml-4 sm:ml-8">
+                        languages:
+                      </span>
+                      <span className="text-orange-300 ml-2">
+                        ["JavaScript", "C++"]
+                      </span>
+                      <span className="text-white">,</span>
+                    </CodeLine>
+
+                    <CodeLine num={13}>
+                      <span className="text-blue-400 ml-4 sm:ml-8">
+                        frameworks_and_lib:
+                      </span>
+                      <span className="text-orange-300 ml-2">
+                        ["React.js", "Next.js", "Zustand", "React Hook Form"]
+                      </span>
+                      <span className="text-white">,</span>
+                    </CodeLine>
+
+                    <CodeLine num={14}>
+                      <span className="text-blue-400 ml-4 sm:ml-8">
+                        styling:
+                      </span>
+                      <span className="text-orange-300 ml-2">
+                        ["Tailwind CSS", "shadcn/ui"]
+                      </span>
+                      <span className="text-white">,</span>
+                    </CodeLine>
+
+                    <CodeLine num={15}>
+                      <span className="text-blue-400 ml-4 sm:ml-8">
+                        apis_and_tools:
+                      </span>
+                      <span className="text-orange-300 ml-2">
+                        ["REST APIs", "Gemini API", "Git", "GitHub"]
+                      </span>
+                    </CodeLine>
+
+                    <CodeLine num={16}>
+                      <span className="text-white ml-2 sm:ml-4">{"}"}</span>
+                      <span className="text-white">,</span>
+                    </CodeLine>
+
+                    {/* ===== END SKILLS ===== */}
+
+                    <CodeLine num={17}>
+                      <span className="text-blue-400 ml-2 sm:ml-4">
+                        availability:
+                      </span>
+                      <span className="text-green-400 ml-2">true</span>
+                      <span className="text-white">,</span>
+                      <span className="text-gray-500 ml-2">
+                        // Open to opportunities
+                      </span>
+                    </CodeLine>
+
+                    <CodeLine num={18}>
+                      <span className="text-blue-400 ml-2 sm:ml-4">
+                        location:
+                      </span>
+                      <span className="text-orange-300 ml-2">"India"</span>
+                    </CodeLine>
+
+                    <CodeLine num={19}>
+                      <span className="text-white">{"}"};</span>
+                    </CodeLine>
+
+                    <CodeLine num={20}>
+                      <span></span>
+                    </CodeLine>
+
+                    <CodeLine num={21}>
+                      <span className="text-purple-400">export</span>
+                      <span className="text-purple-400 ml-2">default</span>
+                      <span className="text-white ml-2">developer;</span>
+                    </CodeLine>
+                  </div>
+                  <Meteors number={20} />
                 </div>
-              </div>
 
-              {/* Code Content - Improved for mobile */}
-              <div className="p-3 sm:p-6 font-mono text-xs sm:text-sm leading-relaxed overflow-x-auto">
-                <div className="space-y-0.5 sm:space-y-1 min-w-max">
-                  <CodeLine num={1}>
-                    <span className="text-purple-400">const</span>
-                    <span className="text-white ml-2">developer</span>
-                    <span className="text-white ml-2">=</span>
-                    <span className="text-white ml-2">{"{"}</span>
-                  </CodeLine>
-
-                  <CodeLine num={2}>
-                    <span className="text-blue-400 ml-2 sm:ml-4">name:</span>
-                    <span className="text-orange-300 ml-2">
-                      "Habibur Rahman"
-                    </span>
-                    <span className="text-white">,</span>
-                  </CodeLine>
-
-                  <CodeLine num={3}>
-                    <span className="text-blue-400 ml-2 sm:ml-4">role:</span>
-                    <span className="text-orange-300 ml-2">
-                      "Frontend Developer"
-                    </span>
-                    <span className="text-white">,</span>
-                  </CodeLine>
-                  <CodeLine num={4}>
-                    <span className="text-blue-400 ml-2 sm:ml-4">email:</span>
-                    <span className="text-orange-300 ml-2">
-                      "rahman.d3v@gmail.com"
-                    </span>
-                    <span className="text-white">,</span>
-                  </CodeLine>
-
-                  <CodeLine num={5}>
-                    <span className="text-blue-400 ml-2 sm:ml-4">
-                      education:
-                    </span>
-                    <span className="text-white ml-2">{"{"}</span>
-                  </CodeLine>
-
-                  <CodeLine num={6}>
-                    <span className="text-blue-400 ml-4 sm:ml-8">degree:</span>
-                    <span className="text-orange-300 ml-2">
-                      "Bachelor of Computer Applications(BCA)"
-                    </span>
-                    <span className="text-white">,</span>
-                  </CodeLine>
-
-                  <CodeLine num={7}>
-                    <span className="text-blue-400 ml-4 sm:ml-8">
-                      university:
-                    </span>
-                    <span className="text-orange-300 ml-2">
-                      "Lovely Professional University"
-                    </span>
-                    <span className="text-white">,</span>
-                  </CodeLine>
-
-                  <CodeLine num={8}>
-                    <span className="text-blue-400 ml-4 sm:ml-8">cgpa:</span>
-                    <span className="text-green-400 ml-2">9.0</span>
-                    <span className="text-white">,</span>
-                  </CodeLine>
-
-                  <CodeLine num={9}>
-                    <span className="text-blue-400 ml-4 sm:ml-8">status:</span>
-                    <span className="text-orange-300 ml-2">"Final Year"</span>
-                  </CodeLine>
-
-                  <CodeLine num={10}>
-                    <span className="text-white ml-2 sm:ml-4">{"}"}</span>
-                    <span className="text-white">,</span>
-                  </CodeLine>
-
-                  {/* ===== SKILLS (UPDATED) ===== */}
-
-                  <CodeLine num={11}>
-                    <span className="text-blue-400 ml-2 sm:ml-4">skills:</span>
-                    <span className="text-white ml-2">{"{"}</span>
-                  </CodeLine>
-
-                  <CodeLine num={12}>
-                    <span className="text-blue-400 ml-4 sm:ml-8">
-                      languages:
-                    </span>
-                    <span className="text-orange-300 ml-2">
-                      ["JavaScript", "C++"]
-                    </span>
-                    <span className="text-white">,</span>
-                  </CodeLine>
-
-                  <CodeLine num={13}>
-                    <span className="text-blue-400 ml-4 sm:ml-8">
-                      frameworks_and_lib:
-                    </span>
-                    <span className="text-orange-300 ml-2">
-                      ["React.js", "Next.js", "Zustand", "React Hook Form"]
-                    </span>
-                    <span className="text-white">,</span>
-                  </CodeLine>
-
-                  <CodeLine num={14}>
-                    <span className="text-blue-400 ml-4 sm:ml-8">styling:</span>
-                    <span className="text-orange-300 ml-2">
-                      ["Tailwind CSS", "shadcn/ui"]
-                    </span>
-                    <span className="text-white">,</span>
-                  </CodeLine>
-
-                  <CodeLine num={15}>
-                    <span className="text-blue-400 ml-4 sm:ml-8">
-                      apis_and_tools:
-                    </span>
-                    <span className="text-orange-300 ml-2">
-                      ["REST APIs", "Gemini API", "Git", "GitHub"]
-                    </span>
-                  </CodeLine>
-
-                  <CodeLine num={16}>
-                    <span className="text-white ml-2 sm:ml-4">{"}"}</span>
-                    <span className="text-white">,</span>
-                  </CodeLine>
-
-                  {/* ===== END SKILLS ===== */}
-
-                  <CodeLine num={17}>
-                    <span className="text-blue-400 ml-2 sm:ml-4">
-                      availability:
-                    </span>
-                    <span className="text-green-400 ml-2">true</span>
-                    <span className="text-white">,</span>
-                    <span className="text-gray-500 ml-2">
-                      // Open to opportunities
-                    </span>
-                  </CodeLine>
-
-                  <CodeLine num={18}>
-                    <span className="text-blue-400 ml-2 sm:ml-4">
-                      location:
-                    </span>
-                    <span className="text-orange-300 ml-2">"India"</span>
-                  </CodeLine>
-
-                  <CodeLine num={19}>
-                    <span className="text-white">{"}"};</span>
-                  </CodeLine>
-
-                  <CodeLine num={20}>
-                    <span></span>
-                  </CodeLine>
-
-                  <CodeLine num={21}>
-                    <span className="text-purple-400">export</span>
-                    <span className="text-purple-400 ml-2">default</span>
-                    <span className="text-white ml-2">developer;</span>
-                  </CodeLine>
+                {/* Status Bar */}
+                <div className="flex items-center justify-between px-3 sm:px-4 py-1.5 sm:py-2 bg-[#007acc] text-white text-xs">
+                  <div className="flex items-center gap-2 sm:gap-4">
+                    <span className="hidden sm:inline">⚡ VS Code</span>
+                    <span>JavaScript</span>
+                  </div>
+                  <div className="flex items-center gap-2 sm:gap-4">
+                    <span className="hidden sm:inline">Ln 21</span>
+                  </div>
                 </div>
-                <Meteors number={20} />
-              </div>
-
-              {/* Status Bar */}
-              <div className="flex items-center justify-between px-3 sm:px-4 py-1.5 sm:py-2 bg-[#007acc] text-white text-xs">
-                <div className="flex items-center gap-2 sm:gap-4">
-                  <span className="hidden sm:inline">⚡ VS Code</span>
-                  <span>JavaScript</span>
-                </div>
-                <div className="flex items-center gap-2 sm:gap-4">
-                  <span className="hidden sm:inline">Ln 21</span>
-                </div>
-              </div>
+              </CursorProvider>
             </div>
 
             {/* Additional Info */}
